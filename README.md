@@ -5,8 +5,6 @@ A modernized, responsive web calculator application refactored and enhanced from
 ---
 
 ## 📌 Project Overview
-* **Assessment:** Pre-Open Source Formative Assessment
-* **Original Project:** [Micheal Roberts - Simple Calculator](https://github.com/michealroberts/calculator)
 * **Author:** Yuvaraj P
 * **Tech Stack:** HTML5, CSS3, JavaScript, Git & GitHub
 
