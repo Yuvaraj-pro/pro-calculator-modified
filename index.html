@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yuvaraj's Pro Calc</title>
+  <style>
+    body { background-color: #0f172a; font-family: 'Segoe UI', Tahoma, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    .calculator { background-color: #1e293b; padding: 24px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); width: 280px; }
+    h3 { color: #38bdf8; text-align: center; margin: 0 0 15px 0; font-size: 18px; letter-spacing: 0.5px; }
+    .display { width: 100%; height: 45px; background-color: #0f172a; color: #f8fafc; font-size: 22px; text-align: right; border: 1px solid #334155; border-radius: 8px; margin-bottom: 15px; box-sizing: border-box; padding: 10px; }
+    .btn-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    button { height: 45px; font-size: 16px; font-weight: bold; border: none; border-radius: 8px; background-color: #334155; color: #ffffff; cursor: pointer; }
+    button.op { background-color: #ea580c; }
+    button.action { background-color: #dc2626; }
+    button.equal { background-color: #16a34a; grid-column: span 2; }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h3>Yuvaraj's Pro Calc</h3>
+    <input type="text" id="screen" class="display" readonly>
+    <div class="btn-grid">
+      <button class="action" onclick="clearScreen()">AC</button>
+      <button class="action" onclick="delChar()">DEL</button>
+      <button class="op" onclick="press('/')">/</button>
+      <button class="op" onclick="press('*')">*</button>
+      
+      <button onclick="press('7')">7</button>
+      <button onclick="press('8')">8</button>
+      <button onclick="press('9')">9</button>
+      <button class="op" onclick="press('-')">-</button>
+      
+      <button onclick="press('4')">4</button>
+      <button onclick="press('5')">5</button>
+      <button onclick="press('6')">6</button>
+      <button class="op" onclick="press('+')">+</button>
+      
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button onclick="press('.')">.</button>
+      
+      <button onclick="press('0')">0</button>
+      <button class="equal" onclick="calculate()">=</button>
+    </div>
+  </div>
+  <script>
+    const screen = document.getElementById('screen');
+    function press(val) { screen.value += val; }
+    function clearScreen() { screen.value = ''; }
+    function delChar() { screen.value = screen.value.slice(0, -1); }
+    function calculate() {
+      try { screen.value = eval(screen.value); }
+      catch(e) { screen.value = 'Error'; }
+    }
+  </script>
+</body>
+</html>
+
